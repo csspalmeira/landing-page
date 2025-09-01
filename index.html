@@ -1,0 +1,136 @@
+
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Landing Page Multilíngue</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 0; padding: 0; background: #f9f9f9; }
+    header, footer { background: #111; color: white; text-align: center; padding: 1rem; }
+    main { padding: 2rem; max-width: 800px; margin: auto; }
+    h1, h2 { color: #333; }
+    .btn { display: inline-block; margin: 1rem 0; padding: 1rem 2rem; background: #007bff; color: white; text-decoration: none; border-radius: 8px; }
+    .faq, .testimonials, .guarantee, .bonus { background: #fff; padding: 1rem; margin: 1rem 0; border-radius: 8px; box-shadow: 0 2px 6px rgba(0,0,0,0.1); }
+    select { margin: 1rem 0; padding: 0.5rem; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1 id="title">Curso de Desenvolvimento Profissional</h1>
+    <select id="languageSwitcher">
+      <option value="pt">Português</option>
+      <option value="en">English</option>
+      <option value="es">Español</option>
+    </select>
+  </header>
+
+  <main>
+    <h2 id="subtitle">Aprimore suas habilidades de vendas e desenvolvimento pessoal</h2>
+    <a href="#" class="btn" id="cta">Quero garantir minha vaga</a>
+
+    <section class="testimonials">
+      <h2 id="testimonials-title">Depoimentos</h2>
+      <p id="testimonial1">"Esse curso mudou minha forma de vender e negociar!" – João</p>
+      <p id="testimonial2">"Aprendi técnicas que já aumentaram minhas vendas em 30%." – Maria</p>
+    </section>
+
+    <section class="faq">
+      <h2 id="faq-title">Perguntas Frequentes</h2>
+      <p><b id="faq1-q">Quanto tempo tenho acesso ao curso?</b><br><span id="faq1-a">Você terá acesso vitalício.</span></p>
+      <p><b id="faq2-q">O curso tem certificado?</b><br><span id="faq2-a">Sim, ao concluir você recebe seu certificado.</span></p>
+    </section>
+
+    <section class="guarantee">
+      <h2 id="guarantee-title">Garantia</h2>
+      <p id="guarantee-text">Você tem 7 dias para testar o curso. Se não gostar, devolvemos seu dinheiro!</p>
+    </section>
+
+    <section class="bonus">
+      <h2 id="bonus-title">Bônus Exclusivos</h2>
+      <p id="bonus-text">Acesso a materiais extras e comunidade exclusiva de alunos.</p>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Curso de Desenvolvimento Profissional</p>
+  </footer>
+
+  <script>
+    const translations = {
+      pt: {
+        title: "Curso de Desenvolvimento Profissional",
+        subtitle: "Aprimore suas habilidades de vendas e desenvolvimento pessoal",
+        cta: "Quero garantir minha vaga",
+        testimonialsTitle: "Depoimentos",
+        testimonial1: "\"Esse curso mudou minha forma de vender e negociar!\" – João",
+        testimonial2: "\"Aprendi técnicas que já aumentaram minhas vendas em 30%.\" – Maria",
+        faqTitle: "Perguntas Frequentes",
+        faq1q: "Quanto tempo tenho acesso ao curso?",
+        faq1a: "Você terá acesso vitalício.",
+        faq2q: "O curso tem certificado?",
+        faq2a: "Sim, ao concluir você recebe seu certificado.",
+        guaranteeTitle: "Garantia",
+        guaranteeText: "Você tem 7 dias para testar o curso. Se não gostar, devolvemos seu dinheiro!",
+        bonusTitle: "Bônus Exclusivos",
+        bonusText: "Acesso a materiais extras e comunidade exclusiva de alunos."
+      },
+      en: {
+        title: "Professional Development Course",
+        subtitle: "Enhance your sales skills and personal growth",
+        cta: "I want to secure my spot",
+        testimonialsTitle: "Testimonials",
+        testimonial1: "\"This course changed the way I sell and negotiate!\" – John",
+        testimonial2: "\"I learned techniques that already increased my sales by 30%.\" – Mary",
+        faqTitle: "Frequently Asked Questions",
+        faq1q: "How long do I have access to the course?",
+        faq1a: "You will have lifetime access.",
+        faq2q: "Does the course provide a certificate?",
+        faq2a: "Yes, you will receive a certificate upon completion.",
+        guaranteeTitle: "Guarantee",
+        guaranteeText: "You have 7 days to try the course. If you don’t like it, we’ll refund your money!",
+        bonusTitle: "Exclusive Bonuses",
+        bonusText: "Access to extra materials and an exclusive student community."
+      },
+      es: {
+        title: "Curso de Desarrollo Profesional",
+        subtitle: "Mejora tus habilidades de ventas y desarrollo personal",
+        cta: "Quiero asegurar mi lugar",
+        testimonialsTitle: "Testimonios",
+        testimonial1: "\"¡Este curso cambió mi forma de vender y negociar!\" – Juan",
+        testimonial2: "\"Aprendí técnicas que ya aumentaron mis ventas en un 30%.\" – María",
+        faqTitle: "Preguntas Frecuentes",
+        faq1q: "¿Cuánto tiempo tendré acceso al curso?",
+        faq1a: "Tendrás acceso de por vida.",
+        faq2q: "¿El curso tiene certificado?",
+        faq2a: "Sí, al finalizar recibirás tu certificado.",
+        guaranteeTitle: "Garantía",
+        guaranteeText: "Tienes 7 días para probar el curso. Si no te gusta, te devolvemos tu dinero.",
+        bonusTitle: "Bonos Exclusivos",
+        bonusText: "Acceso a materiales adicionales y comunidad exclusiva de estudiantes."
+      }
+    };
+
+    const switcher = document.getElementById('languageSwitcher');
+    switcher.addEventListener('change', (e) => {
+      const lang = translations[e.target.value];
+      document.getElementById('title').innerText = lang.title;
+      document.getElementById('subtitle').innerText = lang.subtitle;
+      document.getElementById('cta').innerText = lang.cta;
+      document.getElementById('testimonials-title').innerText = lang.testimonialsTitle;
+      document.getElementById('testimonial1').innerText = lang.testimonial1;
+      document.getElementById('testimonial2').innerText = lang.testimonial2;
+      document.getElementById('faq-title').innerText = lang.faqTitle;
+      document.getElementById('faq1-q').innerText = lang.faq1q;
+      document.getElementById('faq1-a').innerText = lang.faq1a;
+      document.getElementById('faq2-q').innerText = lang.faq2q;
+      document.getElementById('faq2-a').innerText = lang.faq2a;
+      document.getElementById('guarantee-title').innerText = lang.guaranteeTitle;
+      document.getElementById('guarantee-text').innerText = lang.guaranteeText;
+      document.getElementById('bonus-title').innerText = lang.bonusTitle;
+      document.getElementById('bonus-text').innerText = lang.bonusText;
+    });
+  </script>
+</body>
+</html>
